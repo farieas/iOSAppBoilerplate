@@ -22,11 +22,11 @@ class SplashViewController: BaseViewController, SplashDisplayLogic {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        homeWireframe()
+        splashWireframe()
         interactor.onViewReady()
     }
     
-    private func homeWireframe() {
+    private func splashWireframe() {
         let viewController = self
         let presenter = SplashPresenter(viewController: viewController)
         let interactor = SplashInteractor(presenter: presenter)

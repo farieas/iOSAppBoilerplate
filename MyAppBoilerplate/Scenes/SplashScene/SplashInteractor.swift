@@ -11,10 +11,12 @@ protocol SplashBusinessLogic {
 }
 
 protocol SplashDataStore {
-    
+    var someData: String? { get set }
 }
 
 class SplashInteractor: SplashBusinessLogic, SplashDataStore {
+    
+    var someData: String?
     
     let presenter: SplashPresenterLogic
     let worker = SplashWorker(store: SplashTimer())
