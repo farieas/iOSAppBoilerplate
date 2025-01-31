@@ -19,20 +19,20 @@ class UserDefaultsUserSessionStorage: UserSessionStorable {
     /// - Parameter user: A generic type conforming to Codable, representing the user data to be stored.
     func saveUser<T: Codable>(_ user: T) {
         if let encoded = try? user.encodeToData() {
-            userDefaults.save(encoded, for: .userData)
+            userDefaults.save(encoded, forkey: UserDefaultsKey.userData.rawValue)
         }
     }
     
     /// Loads and decodes the stored user object from UserDefaults
     /// - Returns: Returns an optional instance of type T, or nil if no data is found or decoding fails.
     func loadUser<T: Codable>() -> T? {
-        guard let savedData = userDefaults.data(for: .userData) else { return nil }
+        guard let savedData = userDefaults.data(forKey: UserDefaultsKey.userData.rawValue) else { return nil }
         return try? savedData.decode()
     }
     
     /// Removes the stored user session data from UserDefaults.
     func clearUser() {
-        userDefaults.removeValue(for: .userData)
+        userDefaults.removeValue(forKey: UserDefaultsKey.userData.rawValue)
     }
     
 }

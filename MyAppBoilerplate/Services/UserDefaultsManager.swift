@@ -20,20 +20,23 @@ class UserDefaultsManager {
     
     private init() {}
     
-    func save(_ value: Any,for key: UserDefaultsKey) {
-        userDefault.set(value, forKey: key.rawValue)
+    func save(_ value: Any,forkey: String) {
+        userDefault.set(value, forKey: forkey)
+        userDefault.synchronize()
     }
     
-    func value(for key: UserDefaultsKey) -> Any? {
-        userDefault.value(forKey: key.rawValue)
+    func value(forkey: String) -> Any? {
+      userDefault.value(forKey: forkey)
     }
     
-    func data(for key: UserDefaultsKey) -> Data? {
-        userDefault.data(forKey: key.rawValue)
+
+    func data(forKey: String) -> Data? {
+        userDefault.data(forKey: forKey)
     }
     
-    func removeValue(for key: UserDefaultsKey) {
-        userDefault.removeObject(forKey: key.rawValue)
+    func removeValue(forKey: String) {
+        userDefault.removeObject(forKey: forKey)
+        userDefault.synchronize()
     }
     
     func clearAllDefaultsValue() {

@@ -6,11 +6,29 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		1F04195E2D4CAF2F0084250D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F1232BB2D4B89E400957AA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F1232C22D4B89E400957AA8;
+			remoteInfo = MyAppBoilerplate;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		1F04195A2D4CAF2F0084250D /* MyAppBoilerplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAppBoilerplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1232C32D4B89E400957AA8 /* MyAppBoilerplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAppBoilerplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1F04196A2D4CB0C50084250D /* Exceptions for "MyAppBoilerplate" folder in "MyAppBoilerplateTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Services/UserDefaultsManager.swift,
+			);
+			target = 1F0419592D4CAF2F0084250D /* MyAppBoilerplateTests */;
+		};
 		1F1232D82D4B89E500957AA8 /* Exceptions for "MyAppBoilerplate" folder in "MyAppBoilerplate" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -21,10 +39,16 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		1F04195B2D4CAF2F0084250D /* MyAppBoilerplateTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MyAppBoilerplateTests;
+			sourceTree = "<group>";
+		};
 		1F1232C52D4B89E400957AA8 /* MyAppBoilerplate */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				1F1232D82D4B89E500957AA8 /* Exceptions for "MyAppBoilerplate" folder in "MyAppBoilerplate" target */,
+				1F04196A2D4CB0C50084250D /* Exceptions for "MyAppBoilerplate" folder in "MyAppBoilerplateTests" target */,
 			);
 			path = MyAppBoilerplate;
 			sourceTree = "<group>";
@@ -32,6 +56,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1F0419572D4CAF2F0084250D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1F1232C02D4B89E400957AA8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				1F1232C52D4B89E400957AA8 /* MyAppBoilerplate */,
+				1F04195B2D4CAF2F0084250D /* MyAppBoilerplateTests */,
 				1F1232C42D4B89E400957AA8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				1F1232C32D4B89E400957AA8 /* MyAppBoilerplate.app */,
+				1F04195A2D4CAF2F0084250D /* MyAppBoilerplateTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +94,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1F0419592D4CAF2F0084250D /* MyAppBoilerplateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F0419622D4CAF2F0084250D /* Build configuration list for PBXNativeTarget "MyAppBoilerplateTests" */;
+			buildPhases = (
+				1F0419562D4CAF2F0084250D /* Sources */,
+				1F0419572D4CAF2F0084250D /* Frameworks */,
+				1F0419582D4CAF2F0084250D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F04195F2D4CAF2F0084250D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1F04195B2D4CAF2F0084250D /* MyAppBoilerplateTests */,
+			);
+			name = MyAppBoilerplateTests;
+			packageProductDependencies = (
+			);
+			productName = MyAppBoilerplateTests;
+			productReference = 1F04195A2D4CAF2F0084250D /* MyAppBoilerplateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		1F1232C22D4B89E400957AA8 /* MyAppBoilerplate */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F1232D92D4B89E500957AA8 /* Build configuration list for PBXNativeTarget "MyAppBoilerplate" */;
@@ -94,6 +150,10 @@
 				LastUpgradeCheck = 1620;
 				ORGANIZATIONNAME = Farhan;
 				TargetAttributes = {
+					1F0419592D4CAF2F0084250D = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 1F1232C22D4B89E400957AA8;
+					};
 					1F1232C22D4B89E400957AA8 = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -114,11 +174,19 @@
 			projectRoot = "";
 			targets = (
 				1F1232C22D4B89E400957AA8 /* MyAppBoilerplate */,
+				1F0419592D4CAF2F0084250D /* MyAppBoilerplateTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1F0419582D4CAF2F0084250D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1F1232C12D4B89E400957AA8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,6 +197,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1F0419562D4CAF2F0084250D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1F1232BF2D4B89E400957AA8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -138,7 +213,49 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1F04195F2D4CAF2F0084250D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F1232C22D4B89E400957AA8 /* MyAppBoilerplate */;
+			targetProxy = 1F04195E2D4CAF2F0084250D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		1F0419602D4CAF2F0084250D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xyz.MyAppBoilerplateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyAppBoilerplate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyAppBoilerplate";
+			};
+			name = Debug;
+		};
+		1F0419612D4CAF2F0084250D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xyz.MyAppBoilerplateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyAppBoilerplate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyAppBoilerplate";
+			};
+			name = Release;
+		};
 		1F1232DA2D4B89E500957AA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -313,6 +430,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1F0419622D4CAF2F0084250D /* Build configuration list for PBXNativeTarget "MyAppBoilerplateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F0419602D4CAF2F0084250D /* Debug */,
+				1F0419612D4CAF2F0084250D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1F1232BE2D4B89E400957AA8 /* Build configuration list for PBXProject "MyAppBoilerplate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
