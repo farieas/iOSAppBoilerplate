@@ -6,6 +6,8 @@
 //  Copyright © 2025 Farhan. All rights reserved.
 //
 
+import Combine
+
 protocol HomeBusinessLogic {
     func doSomething()
 }
@@ -15,10 +17,11 @@ protocol HomeDataStore {
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
-    
+  
     let presenter: HomePresenterLogic
     
     let worker = HomeWorker(store: HomeAPIStore())
+    var cancellables : Set<AnyCancellable> = []
     
     var someData: String?
     
@@ -27,11 +30,21 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
         self.someData = someData
     }
     
-    
     func doSomething() {
-        worker.doSomething {
-            
-        }
+//        let publisher:ResponseHandler<[HomeModels.Photo]> = worker.doSomething()
+//        publisher.sink { completion in
+//            switch completion {
+//            case .failure(let error):
+//                print("Error: \(error)")
+//            case .finished:
+//                print("Finished")
+//                break
+//            }
+//        } receiveValue: { [weak self] result in
+//            guard let self = self else { return }
+//            print("Result received: \(result.data.count)")
+//            self.presenter.presentSomething();
+//        }.store(in: &cancellables)
     }
     
 }

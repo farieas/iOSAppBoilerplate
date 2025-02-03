@@ -30,7 +30,14 @@ class SplashRouter: NSObject, SplashRouterLogic, SplashDataPassing {
     
     func navigateToHome() {
         let vc = HomeViewController()
+        if let dataStore = dataStore, var destinationDS = vc.router?.dataStore {
+            self.passDataToDesstination(dataStore, destination: &destinationDS)
+        }
         viewController?.show(vc, sender: nil)
+    }
+    
+    func passDataToDesstination(_ data: SplashDataStore, destination: inout HomeDataStore) {
+        destination.someData = data.someData
     }
     
     func navigateToLogin() {

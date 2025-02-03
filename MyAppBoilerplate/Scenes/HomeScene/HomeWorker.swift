@@ -2,12 +2,12 @@
 //  HomeWorker.swift
 //  MyAppBoilerplate
 //
-//  Created by ASPLAPMAC24 on 01/02/25.
+//  Created by Farhan on 01/02/25.
 //  Copyright © 2025 Farhan. All rights reserved.
 //
 
 protocol HomeWorkerProtocol {
-    func doSomething(handler: @escaping () -> Void)
+    func doSomething<T: Codable>() -> ResponseHandler<T>
 }
 
 class HomeWorker {
@@ -18,8 +18,8 @@ class HomeWorker {
         self.store = store
     }
     
-    func doSomething(handler: @escaping () -> Void) {
-        store.doSomething(handler: handler)
+    func doSomething<T: Codable>() -> ResponseHandler<T> {
+        store.doSomething()
     }
     
 }

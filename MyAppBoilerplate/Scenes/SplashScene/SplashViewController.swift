@@ -36,7 +36,6 @@ class SplashViewController: BaseViewController, SplashDisplayLogic {
     }
 
     func onViewReady() {
-        print("onViewReady")
-       // router.navigateToHome()
+        router.navigateToHome()
     }
 }

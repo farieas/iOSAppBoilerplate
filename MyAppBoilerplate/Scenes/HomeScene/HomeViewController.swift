@@ -16,12 +16,22 @@ class HomeViewController: BaseViewController, HomeDisplayLogic {
     
     var interator: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRouterLogic & HomeDataPassing)?
-   
+    
+    override init() {
+        super.init()
+        homeWireFrame()
+    }
+    
+   required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        homeWireFrame()
+        interator?.doSomething()
+        
     }
     
     func homeWireFrame() {
@@ -37,7 +47,7 @@ class HomeViewController: BaseViewController, HomeDisplayLogic {
     
     
     func displaySomething() {
-      
+      // print("Data Displayed")
     }
     
 
