@@ -13,12 +13,23 @@ protocol NetworkProtocol {
     func executeRequest<T: Codable>(_ request: Requestable) -> ResponseHandler<T>
 }
 
-class NetworkManager: NetworkProtocol {
+class NetworkManager {
     
-    static let shared = NetworkManager()
+    static let shared = NetworkManager(service: URLSessionNetworkService())
+    private let service: NetworkProtocol
     
-    private init() { }
+    private init(service: NetworkProtocol) {
+        self.service = service
+    }
     
+    func executeRequest<T: Codable>(_ request: Requestable) -> ResponseHandler<T> {
+        service.executeRequest(request)
+        
+    }
+    
+}
+
+class URLSessionNetworkService: NetworkProtocol {
     func executeRequest<T: Codable>(_ request: Requestable) -> ResponseHandler<T> {
         do {
             let urlRequest = try request.urlRequest()
@@ -31,5 +42,4 @@ class NetworkManager: NetworkProtocol {
             return Fail(error: error).eraseToAnyPublisher()
         }
     }
-    
 }
